@@ -44,4 +44,14 @@ def todo_done(request, pk):
 def todo_done_list(request):
     dones = Todo.objects.filter(completed=True)
     return render(request, 'todo/todo_done_list.html', {'dones': dones})
+
+def todo_delete(request, pk):
+    todo = Todo.objects.get(id=pk)
+    todo.delete()
+    return redirect('todo_list')
+
+def done_delete(request, pk):
+    todo = Todo.objects.get(id=pk)
+    todo.delete()
+    return redirect('todo_done_list')
 # Create your views here.

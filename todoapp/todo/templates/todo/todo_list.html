@@ -28,6 +28,7 @@
         <div style="float:right">
           <a href="{% url 'todo_done' todo.pk%}" class="btn btn-success">완료</a>
           <a href="{% url 'todo_edit' todo.pk%}" class="btn btn-outline-primary">수정하기</a>
+          <a href="{% url 'todo_delete' todo.pk%}" class="btn btn-danger">삭제</a>
         </div>
       </li>
     {% endfor %}

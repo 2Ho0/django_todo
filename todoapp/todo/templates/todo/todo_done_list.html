@@ -21,6 +21,9 @@
     {% for done in dones %}
       <li class="list-group-item">
         <a href="{% url 'todo_detail' done.pk%}">{{ done.title }}</a>
+        <div style="float:right">
+          <a href="{% url 'done_delete' done.pk%}" class="btn btn-danger">삭제</a>
+        </div>
       </li>
     {% empty %}
       <li class="list-group-item">완료된 TODO가 없습니다.</li>
