@@ -19,7 +19,9 @@
   </p>
   <ul class="list-group">
     {% for done in dones %}
-      <li class="list-group-item">{{ done.title }}</li>
+      <li class="list-group-item">
+        <a href="{% url 'todo_detail' done.pk%}">{{ done.title }}</a>
+      </li>
     {% empty %}
       <li class="list-group-item">완료된 TODO가 없습니다.</li>
     {% endfor %}
